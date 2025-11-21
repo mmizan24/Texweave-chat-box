@@ -43,8 +43,6 @@ const LiveSessionComponent: React.FC = () => {
         onOpen: () => {
           console.log("Live Session Open");
           setIsConnected(true);
-          startAudioInput(stream, audioCtx, session);
-          startVideoInput(session);
         },
         onMessage: async (message) => {
            // Handle Audio Output from Model
@@ -65,6 +63,10 @@ const LiveSessionComponent: React.FC = () => {
       });
 
       sessionRef.current = session;
+      
+      // Start inputs after session is established
+      startAudioInput(stream, audioCtx, session);
+      startVideoInput(session);
 
     } catch (err: any) {
       console.error("Failed to start session:", err);
