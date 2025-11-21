@@ -1,0 +1,8 @@
+{
+  "name": "TexWeave Chat",
+  "description": "A collaborative workspace featuring group chat with file analysis, a Kanban task tracker, and real-time AI video consultation.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
